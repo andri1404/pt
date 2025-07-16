@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-translation-key="site_title">AnzaCodeworks - Jasa Pembuatan Website &amp; Bot Profesional</title>
+<link href="https://via.placeholder.com/32x32/007BFF/ffffff?text=AC" rel="icon" type="image/x-icon"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --primary-color: #007BFF; /* Vibrant Blue */
+            --secondary-color: #1e2a38; /* Deeper Navy */
+            --accent-color: #00C851; /* Bright Green */
+            --text-color: #333;
+            --light-bg: #fdfdff;
+            --dark-bg: #f1f5f9;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background-color: rgba(30, 42, 56, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 0.8rem 0;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: #fff !important;
+            font-size: 1.7rem;
+            letter-spacing: 1px;
+        }
+        .navbar-nav .nav-link {
+            color: #e0e0e0 !important;
+            transition: color 0.3s ease, transform 0.2s ease;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-left: 20px;
+        }
+        .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--secondary-color), #3c4e62);
+            color: #fff;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-height: 80vh;
+            overflow: hidden;
+        }
+        
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+        .hero-section p {
+            font-size: 1rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: both;
+        }
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 16px 45px;
+            font-size: 1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(0, 123, 255, 0.3);
+        }
+        .btn-primary-custom:hover {
+            background-color: #0056b3;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+        }
+
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            height: 5px;
+            width: 70px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 3px;
+        }
+
+        .service-card, .portfolio-item, .target-audience-section .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+            padding: 35px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .service-card:hover, .portfolio-item:hover, .target-audience-section .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .service-card .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover .icon-wrapper {
+            transform: rotate(15deg) scale(1.1);
+        }
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        .service-card p {
+            font-size: 1rem;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .target-audience-section {
+            background-color: var(--dark-bg);
+        }
+        .target-audience-section .card {
+            justify-content: center;
+            align-items: center;
+        }
+        .target-audience-section .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 15px;
+        }
+        .target-audience-section .card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .portfolio-item .emoji-placeholder {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            background-color: #f0f2f5;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .portfolio-item .card-body {
+            padding: 0;
+        }
+        .portfolio-item .card-title {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .portfolio-item .card-text {
+            color: #555;
+            font-size: 1rem;
+        }
+        .portfolio-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .portfolio-item a:hover {
+            text-decoration: underline;
+        }
+
+        .about-section {
+            background-color: var(--dark-bg);
+            padding: 100px 0;
+        }
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            text-align: center;
+        }
+
+        .contact-section {
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .contact-section .section-title {
+            color: #fff;
+        }
+        .contact-section .section-title::after {
+            background: linear-gradient(90deg, var(--primary-color), #fff);
+        }
+        .contact-section .icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .contact-section p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .contact-section a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+        }
+        .contact-section a:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        footer {
+            background-color: #15202b;
+            color: #bdc3c7;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            background-color: #1da851;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero-section h1 { font-size: 2.4rem; }
+            .hero-section p { font-size: 1.1rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+        @media (max-width: 768px) {
+            .hero-section { min-height: 60vh; padding: 120px 0; }
+            .hero-section h1 { font-size: 2rem; }
+            .hero-section p { font-size: 1rem; }
+            .navbar-nav .nav-link { margin-left: 0; }
+        }
+    
+body.dark-mode .navbar {
+    background-color: #1e1e1e !important;
+}
+body.dark-mode .section-title,
+body.dark-mode .card-title,
+body.dark-mode .card-text {
+    color: #e0e0e0 !important;
+}
+body.dark-mode .portfolio-item,
+body.dark-mode .service-card,
+body.dark-mode .target-audience-section .card {
+    background-color: #1f1f1f !important;
+    color: #e0e0e0;
+}
+body.dark-mode .btn-primary-custom {
+    background-color: #03DAC6 !important;
+    color: #000;
+}
+</style>
+<meta content="AnzaCodeworks menyediakan jasa pembuatan website, landing page, dan bot Telegram/WhatsApp profesional dan andal." name="description"/><meta content="jasa website, bot telegram, bot whatsapp, landing page, AnzaCodeworks, pembuatan website, digital solution" name="keywords"/><meta content="AnzaCodeworks" name="author"/><meta content="index, follow" name="robots"/><meta content="AnzaCodeworks - Jasa Pembuatan Website &amp; Bot Profesional" property="og:title"/><meta content="Solusi digital untuk website dan bot Telegram/WhatsApp." property="og:description"/><meta content="https://via.placeholder.com/1200x630.png?text=AnzaCodeworks" property="og:image"/><meta content="https://yourwebsite.com" property="og:url"/><meta content="website" property="og:type"/><meta content="summary_large_image" name="twitter:card"/><meta content="AnzaCodeworks - Jasa Website &amp; Bot" name="twitter:title"/><meta content="Solusi digital andal untuk website dan bot Telegram/WhatsApp." name="twitter:description"/><meta content="https://via.placeholder.com/1200x630.png?text=AnzaCodeworks" name="twitter:image"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AnzaCodeworks",
+  "url": "https://yourwebsite.com",
+  "logo": "https://via.placeholder.com/512.png?text=AC",
+  "sameAs": [
+    "https://t.me/iam_andri",
+    "https://wa.me/6283874636450"
+  ],
+  "description": "AnzaCodeworks menyediakan jasa pembuatan website dan bot Telegram/WhatsApp profesional."
+}
+</script><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/></head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
+<a class="navbar-brand" href="#">AnzaCodeworks</a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item">
+<a class="nav-link" data-translation-key="nav_home" href="#home">Beranda</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-translation-key="nav_services" href="#services">Layanan</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-translation-key="nav_portfolio" href="#portfolio">Portofolio</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-translation-key="nav_about" href="#about">Tentang Kami</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-translation-key="nav_contact" href="#contact">Kontak</a>
+</li>
+</ul>
+<div class="ms-3">
+<button class="btn btn-sm btn-outline-light" id="translate-id">ID</button>
+<button class="btn btn-sm btn-outline-light" id="translate-en">EN</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-section" data-aos="fade-up" id="home">
+<div class="container">
+<h1 data-translation-key="hero_title">Solusi Profesional untuk Website, Landing Page, Bot Telegram, dan Bot WhatsApp</h1>
+<p data-translation-key="hero_subtitle">Kami mewujudkan kehadiran digital Anda dengan layanan pengembangan website dan bot yang inovatif dan andal.</p>
+<a class="btn btn-primary-custom" data-translation-key="hero_button" href="https://wa.me/6283874636450" rel="noopener noreferrer" target="_blank">Konsultasi Gratis Sekarang!</a>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-5" id="services">
+<div class="container">
+<h2 class="section-title" data-aos="fade-up" data-aos-delay="0" data-translation-key="services_title">Layanan Kami</h2>
+<div class="row g-4">
+<div class="col-md-4">
+<div class="service-card" data-aos="zoom-in" data-aos-delay="0">
+<div class="icon-wrapper"><i class="fas fa-globe"></i></div>
+<h3 data-translation-key="service1_title">Pembuatan Website Profesional</h3>
+<p data-translation-key="service1_desc">Membangun website yang responsif, modern, dan fungsional sesuai kebutuhan bisnis atau organisasi Anda. Mulai dari landing page, company profile, e-commerce, hingga sistem informasi kustom.</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+<div class="icon-wrapper"><i class="fab fa-telegram-plane"></i></div>
+<h3 data-translation-key="service2_title">Pengembangan Bot Telegram</h3>
+<p data-translation-key="service2_desc">Automatisasi interaksi dan proses bisnis Anda dengan bot Telegram kustom. Ideal untuk notifikasi, customer service, manajemen data, dan banyak lagi.</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+<div class="icon-wrapper"><i class="fab fa-whatsapp"></i></div>
+<h3 data-translation-key="service3_title">Pengembangan Bot WhatsApp</h3>
+<p data-translation-key="service3_desc">Tingkatkan efisiensi komunikasi dengan bot WhatsApp. Solusi cerdas untuk layanan pelanggan 24/7, pengiriman informasi, dan kampanye pemasaran.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Target Audience Section -->
+<section class="target-audience-section py-5">
+<div class="container">
+<h2 class="section-title" data-aos="fade-up" data-aos-delay="150" data-translation-key="audience_title">Siapa yang Kami Layani?</h2>
+<div class="row g-4">
+<div class="col-lg-3 col-md-6">
+<div class="card">
+<div class="card-body">
+<i class="fas fa-school"></i>
+<h5 class="card-title" data-translation-key="audience1_title">Sekolah &amp; Institusi Pendidikan</h5>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="card">
+<div class="card-body">
+<i class="fas fa-building"></i>
+<h5 class="card-title" data-translation-key="audience2_title">Pemerintah &amp; Lembaga Publik</h5>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="card">
+<div class="card-body">
+<i class="fas fa-briefcase"></i>
+<h5 class="card-title" data-translation-key="audience3_title">Perusahaan &amp; Korporasi</h5>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="card">
+<div class="card-body">
+<i class="fas fa-store"></i>
+<h5 class="card-title" data-translation-key="audience4_title">UMKM &amp; Startup</h5>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="py-5" id="portfolio">
+<div class="container">
+<h2 class="section-title" data-aos="fade-up" data-aos-delay="300" data-translation-key="portfolio_title">Portofolio Kami</h2>
+<div class="row g-4">
+<div class="col-md-4">
+<div class="portfolio-item" data-aos="zoom-in" data-aos-delay="0">
+<div class="emoji-placeholder" loading="lazy">💼</div>
+<div class="card-body">
+<h5 class="card-title" data-translation-key="portfolio1_title">Demo Bot Telegram Perusahaan</h5>
+<p class="card-text" data-translation-key="portfolio1_desc">Contoh bot Telegram untuk kebutuhan internal atau eksternal perusahaan. Coba demo di <a href="https://t.me/ptancoin_bot" rel="noopener noreferrer" target="_blank">@ptancoin_bot</a>.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+<div class="emoji-placeholder" loading="lazy">🏫</div>
+<div class="card-body">
+<h5 class="card-title" data-translation-key="portfolio2_title">Demo Bot Telegram Sekolah</h5>
+<p class="card-text" data-translation-key="portfolio2_desc">Contoh bot Telegram untuk layanan informasi akademik dan pendaftaran siswa. Coba demo di <a href="https://t.me/klinik_anza_bot" rel="noopener noreferrer" target="_blank">@klinik_anza_bot</a>.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+<div class="emoji-placeholder" loading="lazy">💬</div>
+<div class="card-body">
+<h5 class="card-title" data-translation-key="portfolio3_title">Website Curhat</h5>
+<p class="card-text" data-translation-key="portfolio3_desc">Sebuah platform untuk berbagi cerita dan keluh kesah secara anonim. Kunjungi di <a href="https://curhat.cryptoshop.my.id/" rel="noopener noreferrer" target="_blank">curhat.cryptoshop.my.id</a>.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
+<div class="emoji-placeholder" loading="lazy">📅</div>
+<div class="card-body">
+<h5 class="card-title" data-translation-key="portfolio4_title">Website Cek Usia</h5>
+<p class="card-text" data-translation-key="portfolio4_desc">Alat sederhana untuk menghitung usia berdasarkan tanggal lahir. Kunjungi di <a href="https://cek-usia.cryptoshop.my.id/" rel="noopener noreferrer" target="_blank">cek-usia.cryptoshop.my.id</a>.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="portfolio-item" data-aos="zoom-in" data-aos-delay="400">
+<div class="emoji-placeholder" loading="lazy">📷</div>
+<div class="card-body">
+<h5 class="card-title" data-translation-key="portfolio5_title">Website QR to Teks</h5>
+<p class="card-text" data-translation-key="portfolio5_desc">Konversi kode QR menjadi teks dengan mudah dan cepat. Kunjungi di <a href="https://qrtoteks.cryptoshop.my.id/" rel="noopener noreferrer" target="_blank">qrtoteks.cryptoshop.my.id</a>.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="portfolio-item" data-aos="zoom-in" data-aos-delay="500">
+<div class="emoji-placeholder" loading="lazy">📿</div>
+<div class="card-body">
+<h5 class="card-title" data-translation-key="portfolio6_title">Website Tasbih Digital</h5>
+<p class="card-text" data-translation-key="portfolio6_desc">Aplikasi tasbih digital online untuk membantu ibadah Anda. Kunjungi di <a href="https://tasbih.cryptoshop.my.id/" rel="noopener noreferrer" target="_blank">tasbih.cryptoshop.my.id</a>.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="portfolio-item" data-aos="zoom-in" data-aos-delay="600">
+<div class="emoji-placeholder" loading="lazy">🤖</div>
+<div class="card-body">
+<h5 class="card-title" data-translation-key="portfolio7_title">AI Baca Dokumen Bot</h5>
+<p class="card-text" data-translation-key="portfolio7_desc">Bot Telegram yang dapat membaca dan merangkum dokumen. Coba demo di <a href="http://t.me/aibacadok_bot" rel="noopener noreferrer" target="_blank">@aibacadok_bot</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Section -->
+<section class="about-section" id="about">
+<div class="container">
+<h2 class="section-title" data-aos="fade-up" data-aos-delay="450" data-translation-key="about_title">Tentang AnzaCodeworks</h2>
+<div class="row justify-content-center">
+<div class="col-lg-8">
+<p data-translation-key="about_p1">AnzaCodeworks adalah penyedia solusi digital terkemuka yang berdedikasi untuk membantu individu, bisnis, dan organisasi membangun kehadiran online yang kuat dan efisien. Dengan tim ahli yang berpengalaman, kami fokus pada pengembangan website yang inovatif serta bot Telegram dan WhatsApp yang cerdas untuk mengoptimalkan komunikasi dan operasional Anda.</p>
+<p data-translation-key="about_p2">Kami percaya bahwa setiap entitas memiliki kebutuhan unik, oleh karena itu kami menawarkan pendekatan yang personal dan solusi yang disesuaikan untuk mencapai tujuan digital Anda. Kepuasan klien adalah prioritas utama kami, dan kami berkomitmen untuk memberikan hasil berkualitas tinggi yang tidak hanya memenuhi tetapi melampaui ekspektasi.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+<div class="container">
+<h2 class="section-title" data-aos="fade-up" data-aos-delay="600" data-translation-key="contact_title">Hubungi Kami</h2>
+<p data-translation-key="contact_subtitle">Siap untuk memulai proyek digital Anda? Jangan ragu untuk menghubungi kami!</p>
+<div class="row justify-content-center mt-4">
+<div class="col-md-6">
+<div class="mb-3">
+<i class="fab fa-whatsapp icon"></i>
+<p data-translation-key="contact_whatsapp">WhatsApp: <a href="https://wa.me/6283874636450" rel="noopener noreferrer" target="_blank">083874636450</a></p>
+</div>
+<div class="mb-3">
+<i class="fab fa-telegram-plane icon"></i>
+<p data-translation-key="contact_telegram">Telegram: <a href="https://t.me/iam_andri" rel="noopener noreferrer" target="_blank">@iam_andri</a></p>
+</div>
+<p class="mt-4" data-translation-key="contact_closing">Kami siap membantu Anda mewujudkan ide-ide digital menjadi kenyataan.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="container">
+<p data-translation-key="footer_copyright">© 2025 AnzaCodeworks. All rights reserved.</p>
+</div>
+</footer>
+<!-- Floating WhatsApp Button -->
+<a class="whatsapp-float" href="https://wa.me/6283874636450" rel="noopener noreferrer" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+        const translations = {
+            en: {
+                site_title: "AnzaCodeworks - Professional Website & Bot Development Services",
+                nav_home: "Home",
+                nav_services: "Services",
+                nav_portfolio: "Portfolio",
+                nav_about: "About Us",
+                nav_contact: "Contact",
+                hero_title: "Professional Solutions for Websites, Landing Pages, Telegram Bots, and WhatsApp Bots",
+                hero_subtitle: "We bring your digital presence to life with innovative and reliable website and bot development services.",
+                hero_button: "Free Consultation Now!",
+                services_title: "Our Services",
+                service1_title: "Professional Website Development",
+                service1_desc: "Building responsive, modern, and functional websites according to your business or organizational needs. Starting from landing pages, company profiles, e-commerce, to custom information systems.",
+                service2_title: "Telegram Bot Development",
+                service2_desc: "Automate your business interactions and processes with custom Telegram bots. Ideal for notifications, customer service, data management, and much more.",
+                service3_title: "WhatsApp Bot Development",
+                service3_desc: "Increase communication efficiency with WhatsApp bots. Smart solutions for 24/7 customer service, information delivery, and marketing campaigns.",
+                audience_title: "Who We Serve?",
+                audience1_title: "Schools & Educational Institutions",
+                audience2_title: "Government & Public Institutions",
+                audience3_title: "Companies & Corporations",
+                audience4_title: "MSMEs & Startups",
+                portfolio_title: "Our Portfolio",
+                portfolio1_title: "Corporate Telegram Bot Demo",
+                portfolio1_desc: "Example of a Telegram bot for internal or external company needs. Try the demo at <a href="https://t.me/ptancoin_bot" target="_blank" rel="noopener noreferrer">@ptancoin_bot</a>.",
+                portfolio2_title: "School Telegram Bot Demo",
+                portfolio2_desc: "Example of a Telegram bot for academic information services and student registration. Try the demo at <a href="https://t.me/klinik_anza_bot" target="_blank" rel="noopener noreferrer">@klinik_anza_bot</a>.",
+                portfolio3_title: "Confession Website",
+                portfolio3_desc: "A platform to share stories and complaints anonymously. Visit at <a href="https://curhat.cryptoshop.my.id/" target="_blank" rel="noopener noreferrer">curhat.cryptoshop.my.id</a>.",
+                portfolio4_title: "Age Check Website",
+                portfolio4_desc: "A simple tool to calculate age based on date of birth. Visit at <a href="https.cek-usia.cryptoshop.my.id/" target="_blank" rel="noopener noreferrer">cek-usia.cryptoshop.my.id</a>.",
+                portfolio5_title: "QR to Text Website",
+                portfolio5_desc: "Convert QR codes to text easily and quickly. Visit at <a href="https://qrtoteks.cryptoshop.my.id/" target="_blank" rel="noopener noreferrer">qrtoteks.cryptoshop.my.id</a>.",
+                portfolio6_title: "Digital Tasbih Website",
+                portfolio6_desc: "An online digital tasbih application to help with your worship. Visit at <a href="https://tasbih.cryptoshop.my.id/" target="_blank" rel="noopener noreferrer">tasbih.cryptoshop.my.id</a>.",
+                portfolio7_title: "AI Document Reader Bot",
+                portfolio7_desc: "A Telegram bot that can read and summarize documents. Try the demo at <a href="http://t.me/aibacadok_bot" target="_blank" rel="noopener noreferrer">@aibacadok_bot</a>.",
+                about_title: "About AnzaCodeworks",
+                about_p1: "AnzaCodeworks is a leading digital solutions provider dedicated to helping individuals, businesses, and organizations build a strong and efficient online presence. With an experienced team of experts, we focus on developing innovative websites and smart Telegram and WhatsApp bots to optimize your communication and operations.",
+                about_p2: "We believe that every entity has unique needs, therefore we offer a personal approach and customized solutions to achieve your digital goals. Client satisfaction is our top priority, and we are committed to delivering high-quality results that not only meet but exceed expectations.",
+                contact_title: "Contact Us",
+                contact_subtitle: "Ready to start your digital project? Don't hesitate to contact us!",
+                contact_whatsapp: "WhatsApp: <a href="https://wa.me/6283874636450" target="_blank" rel="noopener noreferrer">083874636450</a>",
+                contact_telegram: "Telegram: <a href="https://t.me/iam_andri" target="_blank" rel="noopener noreferrer">@iam_andri</a>",
+                contact_closing: "We are ready to help you turn digital ideas into reality.",
+                footer_copyright: "&copy; 2025 AnzaCodeworks. All rights reserved."
+            },
+            id: {
+                site_title: "AnzaCodeworks - Jasa Pembuatan Website & Bot Profesional",
+                nav_home: "Beranda",
+                nav_services: "Layanan",
+                nav_portfolio: "Portofolio",
+                nav_about: "Tentang Kami",
+                nav_contact: "Kontak",
+                hero_title: "Solusi Profesional untuk Website, Landing Page, Bot Telegram, dan Bot WhatsApp",
+                hero_subtitle: "Kami mewujudkan kehadiran digital Anda dengan layanan pengembangan website dan bot yang inovatif dan andal.",
+                hero_button: "Konsultasi Gratis Sekarang!",
+                services_title: "Layanan Kami",
+                service1_title: "Pembuatan Website Profesional",
+                service1_desc: "Membangun website yang responsif, modern, dan fungsional sesuai kebutuhan bisnis atau organisasi Anda. Mulai dari landing page, company profile, e-commerce, hingga sistem informasi kustom.",
+                service2_title: "Pengembangan Bot Telegram",
+                service2_desc: "Automatisasi interaksi dan proses bisnis Anda dengan bot Telegram kustom. Ideal untuk notifikasi, customer service, manajemen data, dan banyak lagi.",
+                service3_title: "Pengembangan Bot WhatsApp",
+                service3_desc: "Tingkatkan efisiensi komunikasi dengan bot WhatsApp. Solusi cerdas untuk layanan pelanggan 24/7, pengiriman informasi, dan kampanye pemasaran.",
+                audience_title: "Siapa yang Kami Layani?",
+                audience1_title: "Sekolah & Institusi Pendidikan",
+                audience2_title: "Pemerintah & Lembaga Publik",
+                audience3_title: "Perusahaan & Korporasi",
+                audience4_title: "UMKM & Startup",
+                portfolio_title: "Portofolio Kami",
+                portfolio1_title: "Demo Bot Telegram Perusahaan",
+                portfolio1_desc: "Contoh bot Telegram untuk kebutuhan internal atau eksternal perusahaan. Coba demo di <a href="https://t.me/ptancoin_bot" target="_blank" rel="noopener noreferrer">@ptancoin_bot</a>.",
+                portfolio2_title: "Demo Bot Telegram Sekolah",
+                portfolio2_desc: "Contoh bot Telegram untuk layanan informasi akademik dan pendaftaran siswa. Coba demo di <a href="https://t.me/klinik_anza_bot" target="_blank" rel="noopener noreferrer">@klinik_anza_bot</a>.",
+                portfolio3_title: "Website Curhat",
+                portfolio3_desc: "Sebuah platform untuk berbagi cerita dan keluh kesah secara anonim. Kunjungi di <a href="https://curhat.cryptoshop.my.id/" target="_blank" rel="noopener noreferrer">curhat.cryptoshop.my.id</a>.",
+                portfolio4_title: "Website Cek Usia",
+                portfolio4_desc: "Alat sederhana untuk menghitung usia berdasarkan tanggal lahir. Kunjungi di <a href="https.cek-usia.cryptoshop.my.id/" target="_blank" rel="noopener noreferrer">cek-usia.cryptoshop.my.id</a>.",
+                portfolio5_title: "Website QR to Teks",
+                portfolio5_desc: "Konversi kode QR menjadi teks dengan mudah dan cepat. Kunjungi di <a href="https://qrtoteks.cryptoshop.my.id/" target="_blank" rel="noopener noreferrer">qrtoteks.cryptoshop.my.id</a>.",
+                portfolio6_title: "Website Tasbih Digital",
+                portfolio6_desc: "Aplikasi tasbih digital online untuk membantu ibadah Anda. Kunjungi di <a href="https://tasbih.cryptoshop.my.id/" target="_blank" rel="noopener noreferrer">tasbih.cryptoshop.my.id</a>.",
+                portfolio7_title: "AI Baca Dokumen Bot",
+                portfolio7_desc: "Bot Telegram yang dapat membaca dan merangkum dokumen. Coba demo di <a href="http://t.me/aibacadok_bot" target="_blank" rel="noopener noreferrer">@aibacadok_bot</a>.",
+                about_title: "Tentang AnzaCodeworks",
+                about_p1: "AnzaCodeworks adalah penyedia solusi digital terkemuka yang berdedikasi untuk membantu individu, bisnis, dan organisasi membangun kehadiran online yang kuat dan efisien. Dengan tim ahli yang berpengalaman, kami fokus pada pengembangan website yang inovatif serta bot Telegram dan WhatsApp yang cerdas untuk mengoptimalkan komunikasi dan operasional Anda.",
+                about_p2: "Kami percaya bahwa setiap entitas memiliki kebutuhan unik, oleh karena itu kami menawarkan pendekatan yang personal dan solusi yang disesuaikan untuk mencapai tujuan digital Anda. Kepuasan klien adalah prioritas utama kami, dan kami berkomitmen untuk memberikan hasil berkualitas tinggi yang tidak hanya memenuhi tetapi melampaui ekspektasi.",
+                contact_title: "Hubungi Kami",
+                contact_subtitle: "Siap untuk memulai proyek digital Anda? Jangan ragu untuk menghubungi kami!",
+                contact_whatsapp: "WhatsApp: <a href="https://wa.me/6283874636450" target="_blank" rel="noopener noreferrer">083874636450</a>",
+                contact_telegram: "Telegram: <a href="https://t.me/iam_andri" target="_blank" rel="noopener noreferrer">@iam_andri</a>",
+                contact_closing: "Kami siap membantu Anda mewujudkan ide-ide digital menjadi kenyataan.",
+                footer_copyright: "&copy; 2025 AnzaCodeworks. All rights reserved."
+            }
+        };
+
+        function translate(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-translation-key]').forEach(el => {
+                const key = el.dataset.translationKey;
+                const translation = translations[lang][key];
+                if (translation) {
+                    el.innerHTML = translation;
+                }
+            });
+        }
+
+        // Set initial language based on browser or default to 'id'
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialLang = navigator.language.startsWith('en') ? 'en' : 'id';
+            translate(initialLang);
+
+            document.getElementById('translate-id').addEventListener('click', () => translate('id'));
+            document.getElementById('translate-en').addEventListener('click', () => translate('en'));
+        });
+    </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>AOS.init();</script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script><script>
+gsap.from(".navbar-brand", {
+  duration: 1,
+  y: -50,
+  opacity: 0,
+  ease: "bounce.out"
+});
+</script></body>
+</html>
